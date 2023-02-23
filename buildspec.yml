@@ -5,7 +5,12 @@ phases:
     runtime-versions:
       docker: 18
   pre-build:
+    commands:
   build:
     commands:
+      - docker build -t public.ecr.aws/t7a4n4t7/backend:latest ./django
+      - docker build -t public.ecr.aws/t7a4n4t7/frontend:latest ./react
   post-build:
     commands:
+      - docker push public.ecr.aws/t7a4n4t7/backend:latest
+      - docker push public.ecr.aws/t7a4n4t7/backend:latest
