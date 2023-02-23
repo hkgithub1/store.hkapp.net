@@ -17,5 +17,5 @@ phases:
       - docker build -t 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend:latest -f ./react/Dockerfile .
   post_build:
     commands:
-      - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend:latest
-      - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+      - docker push ./django/712577856580.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+      - docker push ./react/712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
