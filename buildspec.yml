@@ -13,8 +13,8 @@ phases:
       - git clone codecommit::us-east-1://ComicsDocker
   build:
     commands:
-      - docker build -t public.ecr.aws/t7a4n4t7/backend:latest -f ./django/Dockerfile .
-      - docker build -t public.ecr.aws/t7a4n4t7/frontend:latest -f ./react/Dockerfile .
+      - docker build -t 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend:latest -f ./django/Dockerfile .
+      - docker build -t 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend:latest .
   post_build:
     commands:
       - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend:latest
