@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "Making migrations"
+python manage.py makemigrations Backend
+
+# Apply database migrations
+echo "Apply database migrations"
+python manage.py migrate
+
+# Start server
+echo "Starting server"
+gunicorn Backend.wsgi:application --bind 0.0.0.0:8000
+
+exec "$@"
