@@ -2,9 +2,9 @@ FROM python:3.8-alpine
 ENV PYTHONUNBUFFERED 1
 WORKDIR /django
 RUN apk add build-base
-RUN cp requirements.txt .
+COPY /ComicsDocker/django/requirements.txt .
 RUN pip3 install -r requirements.txt
-RUN cp . .
+COPY /ComicsDocker/django .
 
 EXPOSE 8000
 
