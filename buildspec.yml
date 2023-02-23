@@ -6,6 +6,7 @@ phases:
       docker: 18
   pre_build:
     commands:
+      - git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/ComicsDocker
   build:
     commands:
       - docker build -t public.ecr.aws/t7a4n4t7/backend:latest -f ./django/Dockerfile .
