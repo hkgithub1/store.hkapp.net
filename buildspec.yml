@@ -4,12 +4,8 @@ phases:
   install:
     runtime-versions:
       docker: 18
-      python: 3.8
-    commands:
-      - pip install git-remote-codecommit
   pre_build:
     commands:
-      - git clone codecommit::us-east-1://ComicsDocker
   build:
     commands:
       - docker build -t public.ecr.aws/t7a4n4t7/backend:latest -f ./django/Dockerfile .
