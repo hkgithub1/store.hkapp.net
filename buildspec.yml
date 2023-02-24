@@ -10,6 +10,7 @@ phases:
   pre_build:
     commands:
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712577856580.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr describe-repositories --repository-names backend || aws ecr create-repository --repository-name backend
       - git clone codecommit::us-east-1://ComicsDocker
   build:
     commands:
