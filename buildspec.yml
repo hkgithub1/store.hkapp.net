@@ -19,3 +19,7 @@ phases:
     commands:
       - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend
       - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend
+
+artifacts:
+  files:
+    - cloudformation-docker.yml
