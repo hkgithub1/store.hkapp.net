@@ -101,7 +101,7 @@ export default function Header(props) {
         height="75px"
         padding={1}
       >
-        <Grid item display="flex" flexGrow={1}>
+        <Grid item display="flex" alignItems="center" flexGrow={1}>
           <Link to={"/"}>
             <img src={logo} alt="logo" height="24px" width="298px" />
           </Link>

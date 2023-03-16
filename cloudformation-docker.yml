@@ -24,11 +24,9 @@ Resources:
                 - "80:80"
           EOF
           docker-compose -f /home/ubuntu/docker-compose.yml up -d
-  
+
   ElasticIPAssociation:
     Type: AWS::EC2::EIPAssociation
-      Properties: 
-        AllocationId: eipalloc-0cb768f3f2a623952
-        EIP: "54.159.41.50"
-        InstanceId: !Ref EC2Instance
-        NetworkInterfaceId: !Ref EC2Instance
+    Properties:
+      AllocationId: eipalloc-0cb768f3f2a623952
+      InstanceId: !Ref EC2Instance
