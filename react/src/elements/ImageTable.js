@@ -14,7 +14,11 @@ export default function ImageTable(props) {
           <Link to={`/${item.id}`} state={item} key={item.id}>
             <ImageListItem key={item.id}>
               <img
-                src={`${process.env.PUBLIC_URL}` + item.first_image + ".jpg"}
+                src={
+                  `${process.env.REACT_APP_PUBLIC_URL}` +
+                  item.first_image +
+                  ".jpg"
+                }
                 alt={item.book_name}
                 loading="lazy"
               />

@@ -259,7 +259,7 @@ export default function Inventory() {
     });
 
     const query = params.toString();
-    const url = `${process.env.API_URL}/search-books/?${query}`;
+    const url = `${process.env.REACT_APP_BACKEND_API_URL}/search-books/?${query}`;
 
     fetch(url)
       .then((response) => response.json())
@@ -292,7 +292,7 @@ export default function Inventory() {
         eighth_image: bookEighthImg,
       }),
     };
-    fetch(`${process.env.API_URL}/add-book/`, requestOptions)
+    fetch(`${process.env.REACT_APP_BACKEND_API_URL}/add-book/`, requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
 
@@ -313,7 +313,7 @@ export default function Inventory() {
   };
 
   const deleteButtonPressed = (item) => {
-    const url = `${process.env.API_URL}/delete-book/${item.id}`;
+    const url = `${process.env.REACT_APP_BACKEND_API_URL}/delete-book/${item.id}`;
 
     fetch(url, { method: "DELETE" })
       .then((response) => response.json())

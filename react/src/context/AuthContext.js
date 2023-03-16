@@ -28,13 +28,16 @@ export const AuthProvider = ({ children }) => {
 
   let loginUser = async (e, username, password) => {
     e.preventDefault();
-    let response = await fetch(`${process.env.API_URL}/api/token/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: username, password: password }),
-    });
+    let response = await fetch(
+      `${process.env.REACT_APP_BACKEND_API_URL}/api/token/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: username, password: password }),
+      }
+    );
     let data = await response.json();
 
     if (response.status === 200) {
@@ -59,13 +62,16 @@ export const AuthProvider = ({ children }) => {
   };
 
   let updateToken = async () => {
-    let response = await fetch(`${process.env.API_URL}/api/token/refresh/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ refresh: refreshToken }),
-    });
+    let response = await fetch(
+      `${process.env.REACT_APP_BACKEND_API_URL}/api/token/refresh/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ refresh: refreshToken }),
+      }
+    );
 
     let data = await response.json();
 

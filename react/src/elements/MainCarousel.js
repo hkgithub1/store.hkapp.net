@@ -72,7 +72,7 @@ export default function MainCarousel(props) {
 function CarItem(props) {
   return (
     <img
-      src={`${process.env.PUBLIC_URL}` + props.item.img + ".jpg"}
+      src={`${process.env.REACT_APP_PUBLIC_URL}` + props.item.img + ".jpg"}
       alt={props.item.book_name}
       loading="lazy"
       height="100%"

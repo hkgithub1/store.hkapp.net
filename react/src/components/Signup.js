@@ -50,16 +50,17 @@ function Signup() {
         last_name: lastName,
       }),
     };
-    fetch(`${process.env.API_URL}/add-user/`, requestOptions).then(
-      (response) => {
-        if (response.status === 201) {
-          alert("User created!");
-          navigate("/login");
-        } else {
-          alert("Something went wrong!");
-        }
+    fetch(
+      `${process.env.REACT_APP_BACKEND_API_URL}/add-user/`,
+      requestOptions
+    ).then((response) => {
+      if (response.status === 201) {
+        alert("User created!");
+        navigate("/login");
+      } else {
+        alert("Something went wrong!");
       }
-    );
+    });
   };
 
   return (

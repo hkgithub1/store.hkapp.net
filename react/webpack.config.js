@@ -2,6 +2,8 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
+require("dotenv").config();
+
 module.exports = {
   entry: "./src/index.js",
 
@@ -14,12 +16,7 @@ module.exports = {
       template: "./src/index.html",
     }),
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify("http://54.159.41.50:8000"),
-    }),
-    new webpack.DefinePlugin({
-      "process.env.PUBLIC_URL": JSON.stringify(
-        "https://public-comic-images.s3.amazonaws.com/"
-      ),
+      "process.env": JSON.stringify(process.env),
     }),
   ],
   module: {

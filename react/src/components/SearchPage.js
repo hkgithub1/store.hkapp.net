@@ -35,7 +35,7 @@ export default function SearchPage() {
       bp: bookPub,
     });
     const query = params.toString();
-    const url = `${process.env.API_URL}/search-books/?${query}`;
+    const url = `${process.env.REACT_APP_BACKEND_API_URL}/search-books/?${query}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -56,7 +56,7 @@ export default function SearchPage() {
       bp: searchQuery,
     });
     const query = params.toString();
-    const url = `${process.env.API_URL}/search-books/?${query}`;
+    const url = `${process.env.REACT_APP_BACKEND_API_URL}/search-books/?${query}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {

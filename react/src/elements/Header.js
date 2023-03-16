@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext.js";
 import ShoppingCart from "./ShoppingCart.js";
 import logo from "../images/logo.png";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import QuestionMarkOutlinedIcon from "@mui/icons-material/QuestionMarkOutlined";
 import {
   Grid,
   Typography,
@@ -103,13 +101,7 @@ export default function Header(props) {
         height="75px"
         padding={1}
       >
-        <Grid item display="flex" alignItems="center" flexGrow={1}>
-          <IconButton href="/guess">
-            <QuestionMarkOutlinedIcon sx={{ color: "text.white", mr: 2 }} />
-          </IconButton>
-          <IconButton href="/date">
-            <CalendarMonthOutlinedIcon sx={{ color: "text.white", mr: 2 }} />
-          </IconButton>
+        <Grid item display="flex" flexGrow={1}>
           <Link to={"/"}>
             <img src={logo} alt="logo" height="24px" width="298px" />
           </Link>
