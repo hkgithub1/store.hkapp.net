@@ -1,0 +1,19 @@
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0fc07f03521cb60d7
+      IamInstanceProfile: "EC2-to-CodeDeploy"
+      SecurityGroupIds:
+        - sg-09bd2e8eb4610bb53
+      KeyName: feb27key
+      Tags:
+        - Key: Name
+          Value: "StoreInstance"
+
+  ElasticIPAssociation:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      AllocationId: eipalloc-0cb768f3f2a623952
+      InstanceId: !Ref EC2Instance

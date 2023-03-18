@@ -15,17 +15,13 @@ phases:
   pre_build:
     commands:
       - echo "$DOCKERHUB_PASS" | docker login --username $DOCKERHUB_USER --password-stdin
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712577856580.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
       - git clone codecommit::us-east-1://ComicsDocker
   build:
     commands:
-      - docker build -t 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend -f ./django/Dockerfile .
-      - docker build -t 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend -f ./react/Dockerfile .
+      - docker build -t public.ecr.aws/t7a4n4t7/backend -f ./django/Dockerfile .
+      - docker build -t public.ecr.aws/t7a4n4t7/frontend -f ./react/Dockerfile .
   post_build:
     commands:
-      - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/backend
-      - docker push 712577856580.dkr.ecr.us-east-1.amazonaws.com/frontend
-
-artifacts:
-  files:
-    - cloudformation-docker.yml
+      - docker push public.ecr.aws/t7a4n4t7/backend
+      - docker push public.ecr.aws/t7a4n4t7/frontend
