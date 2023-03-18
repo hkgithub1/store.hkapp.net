@@ -1,0 +1,15 @@
+#!/bin/sh
+apt update -y
+cat <<EOF >/home/ubuntu/docker-compose.yml
+version: "3"
+services:
+  backend:
+    image: "public.ecr.aws/t7a4n4t7/backend:latest"
+    ports:
+      - "8000:8000"
+  frontend:
+    image: "public.ecr.aws/t7a4n4t7/frontend:latest"
+    ports:
+      - "80:80"
+EOF
+docker-compose -f /home/ubuntu/docker-compose.yml up -d
