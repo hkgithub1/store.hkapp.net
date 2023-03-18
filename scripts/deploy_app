@@ -12,6 +12,6 @@ services:
     ports:
       - "80:80"
 EOF
-docker-compose rm -f
-docker-compose pull
-docker-compose -f /home/ubuntu/docker-compose.yml up --build -d 
+docker rm -vf $(docker ps -aq)
+docker rmi -f $(docker images -aq)
+docker-compose -f /home/ubuntu/docker-compose.yml up -d 
