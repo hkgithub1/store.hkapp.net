@@ -1,5 +1,5 @@
 #!/bin/sh
-apt update -y
+apt-get update -y
 cat <<EOF >/home/ubuntu/docker-compose.yml
 version: "3"
 services:
@@ -14,4 +14,4 @@ services:
 EOF
 docker-compose rm -f
 docker-compose pull
-docker-compose up --build -d -f /home/ubuntu/docker-compose.yml 
+docker-compose -f /home/ubuntu/docker-compose.yml up --build -d 
