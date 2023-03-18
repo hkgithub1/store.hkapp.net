@@ -52,7 +52,7 @@ export default function HomePage() {
           justifyContent="center"
         >
           <Grid item>
-            <Typography fontWeight="bold" sx={{ color: "text.white" }}>
+            <Typography fontWeight="bold" sx={{ color: "text.black" }}>
               Browse Listings
             </Typography>
           </Grid>
