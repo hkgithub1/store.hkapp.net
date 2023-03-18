@@ -29,3 +29,4 @@ phases:
 artifacts:
   files:
     - appspec.yml
+    - scripts/deploy_app
