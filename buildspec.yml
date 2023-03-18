@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    DOCKER_USER: "arn:aws:secretsmanager:us-east-1:712577856580:secret:docker-hub-username-VrFy7J"
+    DOCKER_PASS: "arn:aws:secretsmanager:us-east-1:712577856580:secret:docker-hub-password-IuAann"
+
 phases:
   install:
     runtime-versions:
@@ -9,6 +14,7 @@ phases:
       - pip install git-remote-codecommit
   pre_build:
     commands:
+      - docker login --username $DOCKER_USER --password $DOCKER_PASS
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 712577856580.dkr.ecr.us-east-1.amazonaws.com
       - git clone codecommit::us-east-1://ComicsDocker
   build:
