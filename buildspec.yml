@@ -25,3 +25,7 @@ phases:
     commands:
       - docker push public.ecr.aws/t7a4n4t7/backend
       - docker push public.ecr.aws/t7a4n4t7/frontend
+
+artifacts:
+  files:
+    - appspec.yml
